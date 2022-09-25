@@ -18,10 +18,10 @@ import { useEffect } from 'react'
     <div className='container'>
     <h1 className="About">About Me</h1>
     <div className='row'>
-        <div className='col-md-6' data-aos="zoom-out-right" >
+        <div className='col-md-6' data-aos="flip-left" >
 <img src={mypicture} alt="muneeb picture" className='About'/>
         </div>
-        <div className='col-md-6 about_info' data-aos="zoom-out-left">
+        <div className='col-md-6 about_info' data-aos="flip-left">
    <h2 className='About'>Full-Stack Web Developer</h2>
   
  <p className='about'>

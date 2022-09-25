@@ -1,0 +1,30 @@
+.container.education{
+  padding-bottom: 50px;
+}
+h1.education{
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+    
+}
+h2.education{
+    color: white;
+    font-family: "Times New Roman", Times, serif;
+    
+}
+h5.education{
+  color: white;
+}
+h7.education{
+  color:  white;
+}
+
+
+
+h1.education::after { 
+  content:"";
+  display:block;
+  width: 200px;
+  border-bottom: 4px solid red;
+  margin: 1px auto 0;
+  }

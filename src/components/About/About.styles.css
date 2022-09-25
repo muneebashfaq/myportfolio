@@ -17,7 +17,7 @@ img.About{
 h1.About::after { 
   content:"";
   display:block;
-  width: 190px;
+  width: 100px;
   max-width:20%;
   border-bottom: 4px solid orange;
   margin: 1px auto 0;

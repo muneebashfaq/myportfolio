@@ -17,6 +17,7 @@ import Button from '@mui/material/Button';
 import Intro from './../Intro/Intro';
 import Menu2 from './Menu2';
 import About from '../About/About.component';
+import Education from '../Education/Education.components';
 import "./Menu.css"
 const drawerWidth = 240;
 const navItems = ['Home', 'About','heading'];
@@ -36,15 +37,16 @@ function Menu(props) {
       <b style={{color:"orange",fontFamily: "Times New Roman, Times, serif",fontSize:"25px"
 }}>Portfolio</b>
       </Typography>
-      <Divider />
-      <List>
-        {navItems.map((item) => (
+      <Divider /> {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
+            <a href={`#${item}`} className="Menu"> <ListItemText primary={item} /></a> 
+             
             </ListItemButton>
           </ListItem>
         ))}
+      <List>
+       
       </List>
     </Box>
   );
@@ -117,12 +119,16 @@ function Menu(props) {
       </ThemeProvider>
     </Box>
      
-     <div  id="Home" style={{backgroundColor:"rgb(39, 39, 39)",paddingTop:"10px"}}>
+     <div  id="Home" style={{backgroundColor:"rgb(39, 39, 39)",paddingTop:"70px"}}>
           <Intro/>
     </div>
     <div  id="About" style={{backgroundColor:"white",marginTop:"-50px"}}>
     <About/>
     </div>
+    <div  id="Home" style={{backgroundColor:"rgb(39, 39, 39)",marginTop:"70px"}}>
+    <Education/>
+    </div>
+   
     </>  );
 }
 

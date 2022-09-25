@@ -13,9 +13,7 @@ import Fade from '@mui/material/Fade';
 
 function ScrollTop(props) {
   const { children, window } = props;
-  // Note that you normally won't need to set the window ref as useScrollTrigger
-  // will default to window.
-  // This is only being set here because the demo is in an iframe.
+
   const trigger = useScrollTrigger({
     target: window ? window() : undefined,
     disableHysteresis: true,
@@ -23,9 +21,7 @@ function ScrollTop(props) {
   });
 
   const handleClick = (event) => {
-    const anchor = (event.target.ownerDocument || document).querySelector(
-      '#back-to-top-anchor',
-    );
+    const anchor = ""    ;
 
     if (anchor) {
       anchor.scrollIntoView({
@@ -63,7 +59,10 @@ export default function Menu2(props) {
       <div id="back-to-top-anchor" />
       <ScrollTop {...props}>
         <Fab size="small" aria-label="scroll back to top">
-          <KeyboardArrowUpIcon />
+        <a href="#top"><KeyboardArrowUpIcon     onClick={() => {
+          window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+        }}/></a>
+          
         </Fab>
       </ScrollTop>
     </React.Fragment>
