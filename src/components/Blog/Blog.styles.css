@@ -1,0 +1,17 @@
+h1.blog{
+    text-align: center;
+    color: white;
+}
+h1.blog::after { 
+    content:"";
+    display:block;
+    width: 100px;
+    border-bottom: 4px solid red;
+    margin: 1px auto 0;
+    }
+.blog_card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}

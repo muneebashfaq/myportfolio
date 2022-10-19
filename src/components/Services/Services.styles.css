@@ -1,0 +1,19 @@
+h1.services{
+        text-align: center;
+        color:white;
+   
+   
+}
+h1.services::after { 
+    content:"";
+    display:block;
+    width: 150px;
+    border-bottom: 4px solid  red;
+    margin: 1px auto 0;
+    }
+
+.services_card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

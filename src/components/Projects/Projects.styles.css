@@ -1,0 +1,19 @@
+h1.projects{
+        text-align: center;
+        
+   
+   
+}
+h1.projects::after { 
+    content:"";
+    display:block;
+    width: 150px;
+    border-bottom: 4px solid orange;
+    margin: 1px auto 0;
+    }
+
+.projects_card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

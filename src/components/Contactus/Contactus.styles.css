@@ -1,0 +1,46 @@
+h1.contactus{
+    text-align: center;
+    color: black;
+}
+h1.contactus::after { 
+    content:"";
+    display:block;
+    width: 140px;
+    border-bottom: 4px solid orange;
+    margin: 1px auto 0;
+    }
+
+.contact_body{
+  
+    text-align: center;
+
+}
+form{
+    display: inline-block;
+}
+.show_error{
+    text-align:left;
+    color:red;
+    font-weight: bold;
+}
+.sidebar_contact{
+     background-color:rgb(39, 39, 39);
+     color: white;
+     border-radius: 12px;
+     margin-top: 60%;
+     text-align: center;
+  
+}
+.contact_icon{
+    cursor: pointer;
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+}
+@media screen and (max-width: 500px) {
+    .sidebar_contact{
+        display: none;
+     
+   }
+  }

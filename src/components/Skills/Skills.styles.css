@@ -1,0 +1,14 @@
+h1.skills{
+    text-align: center;
+}
+h1.skills::after { 
+    content:"";
+    display:block;
+    width: 100px;
+    border-bottom: 4px solid orange;
+    margin: 1px auto 0;
+    }
+
+.container.skills{
+    padding-bottom: 50px;
+}

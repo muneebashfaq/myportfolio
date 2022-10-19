@@ -38,7 +38,7 @@ const Intro=()=>{
             </div>
 
             <div className='col-xl-3 col-lg-4 col-md-5 intro_pic' data-aos="fade-left" >
-           <img src={mypicture} alt="ads" class="intro" style={{width:"250px",height:"200px"}}/>
+           <img src={mypicture} alt="ads" className="intro" style={{width:"250px",height:"200px"}}/>
 </div>
 
         </div>

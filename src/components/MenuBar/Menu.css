@@ -2,3 +2,19 @@ a.Menu{
     text-decoration: none;
     color: white;
 }
+.menu2{
+    margin-right:100px;
+  
+}
+
+.color_dark{
+    background-color:rgb(39, 39, 39);
+    padding-top:50px;
+    padding-bottom:100px;
+}
+
+.color_light{
+    background-color:white;
+    padding-top:50px;
+    padding-bottom:100px;
+}

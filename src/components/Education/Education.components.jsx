@@ -15,18 +15,18 @@ const Education =()=>{
 <div className='col-xl-4 col-lg-4 offset-lg-2 offset-md-4 offset-sm-2' data-aos="flip-up">
 <h2 className='education'>Education</h2>
 <h5 className='education'>BS(Information Technology)</h5>
-<h7 className='education'>University Of Punjab(2017-21)</h7>
+<p className='education'>University Of Punjab(2017-21)</p>
 </div>
 
 
 <div className='col-xl-4 col-lg-4 offset-lg-2 offset-md-4 offset-sm-2' data-aos="flip-down">
 <h2 className='education'>Courses</h2>
 <h5 className='education'>JavaScript Course</h5>
-<h7 className='education'>Newbie(Udemy)</h7>
+<p className='education'>Newbie(Udemy)</p>
 <h5 className='education'>ReactJs Course</h5>
-<h7 className='education'>Zero To Mastery Accademy(udemy)</h7>
+<p className='education'>Zero To Mastery Accademy(udemy)</p>
 <h5 className='education'>Advance ReactJs Course</h5>
-<h7 className='education'>Mysterious Accademy(Google)</h7>
+<p className='education'>Mysterious Accademy(Google)</p>
 
 
 </div>

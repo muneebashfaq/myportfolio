@@ -18,9 +18,14 @@ import Intro from './../Intro/Intro';
 import Menu2 from './Menu2';
 import About from '../About/About.component';
 import Education from '../Education/Education.components';
+import Skills from '../Skills/Skills.component';
+import Projects from '../Projects/Projects.component';
+import Blog from '../Blog/Blog.component';
+import Contactus from '../Contactus/Contactus.component'
+import Services from '../Services/Services.component'
 import "./Menu.css"
 const drawerWidth = 240;
-const navItems = ['Home', 'About','heading'];
+const navItems = ['Home', 'About','Education','Skills','Blog','Projects','Services','Contact'];
 
 
 function Menu(props) {
@@ -71,20 +76,20 @@ function Menu(props) {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' }}}
+            sx={{ mr: 2, display: { sm: 'block',md:'none' }}}
           >
           <MenuIcon />
           </IconButton>
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            sx={{ flexGrow: 1, display: { xs: 'none',  sm: 'none',md:'block'} }}
           >
            <b style={{color:"orange",fontFamily: "Times New Roman, Times, serif",fontSize:"25px",
            padding:"25px"
 }}>Portfolio</b>
           </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'block' }  }}>
+          <Box sx={{ display: { xs: 'none', sm: 'none',md:'block' }  }}>
             {navItems.map((item) => (
               <Button key={item} sx={{ color: '#fff' }}>
                <a href={`#${item}`} className="Menu">{item}</a> 
@@ -104,7 +109,7 @@ function Menu(props) {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: 'block', sm: 'none' },
+            display: { xs: 'block', sm: 'block',md:'none' },
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
           }}
         >
@@ -119,16 +124,33 @@ function Menu(props) {
       </ThemeProvider>
     </Box>
      
-     <div  id="Home" style={{backgroundColor:"rgb(39, 39, 39)",paddingTop:"70px"}}>
+     <div  id="Home" className="color_dark">
           <Intro/>
     </div>
-    <div  id="About" style={{backgroundColor:"white",marginTop:"-50px"}}>
+    <div  id="About" className="color_light" >
     <About/>
     </div>
-    <div  id="Home" style={{backgroundColor:"rgb(39, 39, 39)",marginTop:"70px"}}>
+    <div  id="Education"  className="color_dark">
     <Education/>
     </div>
+    <div  id="Skills" className="color_light">
+    <Skills/>
+    </div>
+    <div  id="Blog" className="color_dark">
+    <Blog/>
+    </div>
+    <div  id="Projects" className="color_light">
+    <Projects/>
+    </div>
+    <div  id="Services" className="color_dark">
+    <Services/>
+    </div>
    
+    <div  id="Contact" className="color_light" >
+    <Contactus/>
+    </div>
+  
+
     </>  );
 }
 
