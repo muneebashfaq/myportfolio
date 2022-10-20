@@ -23,6 +23,7 @@ import Projects from '../Projects/Projects.component';
 import Blog from '../Blog/Blog.component';
 import Contactus from '../Contactus/Contactus.component'
 import Services from '../Services/Services.component'
+import Footer from '../Footer/Footer.components';
 import "./Menu.css"
 const drawerWidth = 240;
 const navItems = ['Home', 'About','Education','Skills','Blog','Projects','Services','Contact'];
@@ -149,7 +150,10 @@ function Menu(props) {
     <div  id="Contact" className="color_light" >
     <Contactus/>
     </div>
-  
+    <div  id="Services" className="footer">
+    <Footer/>
+    </div>
+ 
 
     </>  );
 }

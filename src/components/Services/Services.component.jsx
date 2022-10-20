@@ -12,11 +12,11 @@ const Services=()=>{
     <h1 className='services'>Our Services</h1>
     <div className='container'>
     <div className='row'>
-    {ArrayProject.map(({title,description,pic_url,github},index)=>{
+    {ArrayProject.map(({title,description,icon},index)=>{
     
     return(
-        <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xsm-6 services_card" data-aos="flip-right">
-   <Cards title={title} description={description} pic_url={pic_url} github={github} key={index} />
+        <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xsm-6 services_card" data-aos="flip-left">
+   <Cards title={title} description={description} icon={icon} key={index} />
   </div>
   )
    })}

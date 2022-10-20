@@ -1,51 +1,51 @@
-import ecommerce from '../../assets/ecommerce.PNG'
-import lms from '../../assets/lms.png'
-import vms from '../../assets/vms.PNG'
-import mao from '../../assets/mao.PNG'
-import frogpay from '../../assets/frogpay.PNG'
-import talentapp from '../../assets/talentapp.PNG'
-
+import SettingsIcon from '@mui/icons-material/Settings';
+import LaptopIcon from '@mui/icons-material/Laptop';
+import SystemSecurityUpdateGoodIcon from '@mui/icons-material/SystemSecurityUpdateGood';
+import EngineeringIcon from '@mui/icons-material/Engineering';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import reactjs_logo from '../../assets/reactjs.png'
+import './Services.styles.css'
 
 const ArrayProject=[
     {
-        pic_url:`${ecommerce}`,
-        title:"E-Commerce",
-        description:"This Web App is build using Reactjs as FrontEnd and Django as backEnd Languages",
-        github:" https://muneebashfaq.github.io/e-commerce/",
+        title:"Website security",
+        description:"I am also expert in authentication service of any website. I can make any website srtongly secure .",
+        icon:<SettingsIcon style={{ textAlign:"center",fontSize:"45px"}} />,
        
     },
     {
-        pic_url:`${lms}`,
-        title:"Learnig Management System",
-        description:"This Web App is build using Html,Css,boostrap,JavaScript as FrontEnd and Django as BackEnd Languages",
-        github:"https://muneebashfaq.github.io/Coming Soon/" ,
+      
+        title:"Web Devolopment",
+        description:"As a front end devoloper, I am expert in codding. If you need a beautifull dynamic website with all new technology and accessibility.I can provide you this service.",
+        icon:<LaptopIcon style={{ textAlign:"center",fontSize:"45px"}} />,
+       
        
     },
     {
-        pic_url:`${vms}`,
-        title:"vehicle Management System",
-        description:"This Web App is build using Html,Css,boostrap,JavaScript as FrontEnd and Django as BackEnd Languages",
-        github:"https://muneebashfaq.github.io/Coming Soon/" ,
+        title:"Responsive Web Design",
+        description:"A responsive design makes your website accessible to all users, regardless of their device.",
+        icon:<SystemSecurityUpdateGoodIcon style={{ textAlign:"center",fontSize:"45px"}} />,
        
     },
     {
-        pic_url:`${mao}`,
-        title:"Govt M.A.O College Website",
-        description:"This Web App is build using Reactjs as FrontEnd.This project is for Goverment College",
-        github:" https://muneebashfaq.github.io/mao_web/" ,
+       
+        title:"Fixing problems",
+        description:"Website problem & bugs it’s a common problem for every website. Don’t worry about bugs and problems. I can fix any type of problems & bugs for any website.",
+        icon:<EngineeringIcon style={{ textAlign:"center",fontSize:"45px"}} />,
       
     },
     {
-        pic_url:`${frogpay}`,
+      
         title:"Frogpay",
         description:"This App is build for international client using Reactjs.Its Basically an cryptocurrency payment App",
-        github:"https://muneebashfaq.github.io/frogpay/" , 
+        icon:<img src={reactjs_logo}/>,
     },
     {
-        pic_url:`${talentapp}`,
-        title:"TalentApp",
-        description:"This App is build using Reactjs as front end and Django as backend.its basically contains cv and shortlist the candidate in the basis of there cv",
-        github:"https://muneebashfaq.github.io/talentapp/" , 
+       
+        title:"E-Commerce Website",
+        description:"Integration of E-commerce platforms, payment gateways, custom product templates, and more.",
+        icon:< AddShoppingCartIcon style={{ textAlign:"center",fontSize:"45px"}} />,
+       
     },
 ]
 

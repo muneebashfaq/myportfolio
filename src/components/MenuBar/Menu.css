@@ -18,3 +18,11 @@ a.Menu{
     padding-top:50px;
     padding-bottom:100px;
 }
+.footer{
+    background-color:rgb(39, 39, 39);
+    padding-top:20px;
+    padding-bottom:20px;
+    color: white;
+    text-align: center;
+}
+

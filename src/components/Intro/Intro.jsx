@@ -17,7 +17,7 @@ const Intro=()=>{
             <div className='col-xl-9 col-lg-8 col-md-7 intro' data-aos="fade-right">
             <p className='intro'>Hi,My Name Is Muhammad Muneeb<br/>
             I'm <span style={{color:"rgb(219, 20, 60)"}}><Typewriter 
-            words={['Web Developer!',  'ReactJs Web Developer', 'FrontEnd Web Developer', 'FullStack Web Developer']}
+            words={['Web Developer!',  'ReactJs Developer', 'FrontEnd Developer', 'FullStack Developer']}
       cursor
       cursorStyle="|"
       typeSpeed={70}

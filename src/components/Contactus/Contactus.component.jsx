@@ -128,7 +128,7 @@ const Contactus=()=>{
     return(<>
    
     <h1 className='contactus'>Get In Touch</h1>
-      <Box sx={{ flexGrow: 1 }}>
+      <Box sx={{ flexGrow: 1 }} data-aos="fade-right">
       <Grid container spacing={2}>
         <Grid item xs={11}>
         <div className="contact_body" >
