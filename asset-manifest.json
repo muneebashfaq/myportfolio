@@ -1,18 +1,25 @@
 {
   "files": {
-    "main.css": "/myportfolio/static/css/main.1af2f0bb.css",
-    "main.js": "/myportfolio/static/js/main.ae37f021.js",
+    "main.css": "/myportfolio/static/css/main.0b843c19.css",
+    "main.js": "/myportfolio/static/js/main.1bf3035c.js",
     "static/js/787.1f11dfe9.chunk.js": "/myportfolio/static/js/787.1f11dfe9.chunk.js",
+    "static/media/ecommerce.PNG": "/myportfolio/static/media/ecommerce.9d906d7fb819c9263235.PNG",
     "static/media/webdevelopment.png": "/myportfolio/static/media/webdevelopment.164f7b950f2dffac8eb4.png",
+    "static/media/vms.PNG": "/myportfolio/static/media/vms.5db770e583e1bee521b5.PNG",
+    "static/media/mao.PNG": "/myportfolio/static/media/mao.9ad33141d0d4ac805a25.PNG",
+    "static/media/lms.png": "/myportfolio/static/media/lms.4c49d6a20f8ea66e138b.png",
+    "static/media/talentapp.PNG": "/myportfolio/static/media/talentapp.7306cb2b361249e469bf.PNG",
+    "static/media/blog.jpg": "/myportfolio/static/media/blog.a08504f54dd4ecd69429.jpg",
+    "static/media/frogpay.PNG": "/myportfolio/static/media/frogpay.5edf5911cbbf10f31d5a.PNG",
     "static/media/MyCv.pdf": "/myportfolio/static/media/MyCv.a12835b3c41003c4e888.pdf",
     "static/media/MyPicture.jpeg": "/myportfolio/static/media/MyPicture.45554837a17d34b914eb.jpeg",
     "index.html": "/myportfolio/index.html",
-    "main.1af2f0bb.css.map": "/myportfolio/static/css/main.1af2f0bb.css.map",
-    "main.ae37f021.js.map": "/myportfolio/static/js/main.ae37f021.js.map",
+    "main.0b843c19.css.map": "/myportfolio/static/css/main.0b843c19.css.map",
+    "main.1bf3035c.js.map": "/myportfolio/static/js/main.1bf3035c.js.map",
     "787.1f11dfe9.chunk.js.map": "/myportfolio/static/js/787.1f11dfe9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1af2f0bb.css",
-    "static/js/main.ae37f021.js"
+    "static/css/main.0b843c19.css",
+    "static/js/main.1bf3035c.js"
   ]
 }
