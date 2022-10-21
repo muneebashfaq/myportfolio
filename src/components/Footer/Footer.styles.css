@@ -5,3 +5,15 @@ h4.footer_text{
 h5.footer_text{
     color:rgb(250, 219, 219)
 }
+a.footer_icons{
+    display: inline-block;
+    color: white;
+    padding: 4px;
+    
+}
+@media screen and (min-width: 500px) {
+    .footer_icons{
+        display: none;
+     
+   }
+  }

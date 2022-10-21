@@ -14,7 +14,6 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import Aos from 'aos'
-import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import 'aos/dist/aos.css'
 import { useEffect } from 'react'
@@ -38,7 +37,7 @@ const Contactus=()=>{
   const [msgval,setmsgval] = useState("")
 
   const notify = () => toast.success('Successfully Send Your Message!!!', {
-    position: "top-right",
+    position: "bottom-center",
     autoClose: 4000,
     hideProgressBar: false,
     closeOnClick: true,
@@ -61,8 +60,9 @@ const Contactus=()=>{
       setformemail(false)
       setformmsg(false)
     emailjs.sendForm('service_47h4va7', 'template_6ub9p8v', form.current, 'wHTAn1YPSyWt8yS2F')
-    notify()
+
       .then((result) => {
+        notify()
           console.log(result.text);
       }, (error) => {
           console.log(error.text);
