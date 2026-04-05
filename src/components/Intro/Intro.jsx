@@ -119,8 +119,10 @@ const Intro = () => {
   return (
     <div className="intro-wrapper">
       {/* Floating background elements */}
+      <div className="intro-aurora"></div>
       <div className="bg-orb orb-1"></div>
       <div className="bg-orb orb-2"></div>
+      <div className="bg-orb orb-3"></div>
       <div className="bg-grid"></div>
 
       <div className="container intro-container">

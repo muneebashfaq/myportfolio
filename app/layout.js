@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" style={{ backgroundColor: '#0d1117' }}>
+    <html lang="en" style={{ backgroundColor: '#080d18' }}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       {/* Inline style on body guarantees dark background regardless of antd CSS */}
-      <body style={{ backgroundColor: '#0d1117', color: '#e6edf3', margin: 0 }}>
+      <body style={{ backgroundColor: '#080d18', color: '#f1f5f9', margin: 0 }}>
         {children}
         <script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"

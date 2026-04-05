@@ -102,7 +102,7 @@ export default function Menu() {
       {/* ── SCROLL-TO-TOP ───────────────────────────── */}
       {showTop && (
         <a href="#Home" className="scroll-top-btn" aria-label="scroll to top">
-          <KeyboardArrowUpIcon style={{ fontSize: 20 }} />
+          <KeyboardArrowUpIcon style={{ fontSize: 28, color: '#fff' }} />
         </a>
       )}
 

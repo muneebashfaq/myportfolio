@@ -1,85 +1,63 @@
 /* ─── SERVICES SECTION ───────────────────────────────────── */
 .services-section {
   padding: 90px 0 100px;
-  background-color: var(--bg-primary);
+  background-color: #080d18;
+  position: relative;
+  overflow: hidden;
+}
+.services-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 40% 50% at 0% 100%, #a78bfa0a, transparent),
+    radial-gradient(ellipse 40% 50% at 100% 0%, #34d3990a, transparent);
+  pointer-events: none;
 }
 
 /* ─── SERVICE CARD ───────────────────────────────────────── */
 .srv-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 28px 24px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+  background: #111827;
+  border: 1px solid #1e2d45;
+  border-radius: 16px;
+  padding: 30px 26px;
+  height: 100%; display: flex; flex-direction: column;
   transition: var(--transition);
-  position: relative;
-  overflow: hidden;
+  position: relative; overflow: hidden;
 }
-
 .srv-card::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--blue), var(--purple));
-  opacity: 0;
-  transition: var(--transition);
+  top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, #60a5fa, #a78bfa, #f472b6);
+  opacity: 0; transition: var(--transition);
 }
-
 .srv-card:hover {
-  border-color: var(--border-accent);
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-card-hover), 0 0 30px #58a6ff1a;
+  border-color: #60a5fa25;
+  transform: translateY(-8px);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 40px #60a5fa12;
 }
-
 .srv-card:hover::before { opacity: 1; }
 
 .srv-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #58a6ff15, #d2a8ff15);
-  border: 1px solid #58a6ff20;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  color: var(--blue);
+  width: 56px; height: 56px; border-radius: 14px;
+  background: linear-gradient(135deg, #60a5fa12, #a78bfa10);
+  border: 1px solid #60a5fa22;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 22px; color: #60a5fa;
   transition: var(--transition);
 }
-
 .srv-card:hover .srv-icon {
-  background: linear-gradient(135deg, #58a6ff25, #d2a8ff25);
-  box-shadow: 0 0 20px #58a6ff30;
+  background: linear-gradient(135deg, #60a5fa20, #a78bfa18);
+  box-shadow: 0 0 24px #60a5fa35;
+  transform: scale(1.1);
 }
-
 .srv-title {
-  font-family: var(--font-sans);
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 12px;
+  font-family: var(--font-sans); font-size: 17px; font-weight: 700;
+  color: #f1f5f9; margin-bottom: 12px;
 }
-
 .srv-desc {
-  font-size: 13.5px;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  flex: 1;
-  margin-bottom: 20px;
+  font-size: 13.5px; color: #94a3b8; line-height: 1.75; flex: 1; margin-bottom: 20px;
 }
-
-.srv-footer {
-  padding-top: 16px;
-  border-top: 1px solid var(--border);
-}
-
-.srv-tag {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--text-muted);
-}
+.srv-footer { padding-top: 16px; border-top: 1px solid #1e2d45; }
+.srv-tag { font-family: var(--font-mono); font-size: 12px; color: #334155; }
