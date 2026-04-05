@@ -1,13 +1,13 @@
 'use client'
-import showrealz from '../../assets/showrealz2.PNG'
-import RGSC from '../../assets/RGSC.PNG'
-import console from '../../assets/console.PNG'
-import tudunum from '../../assets/tudunum.PNG'
-import TISZA_Világ from '../../assets/TISZA Világ.PNG'
+import showrealz from '../../assets/showrealz2.png'
+import RGSC from '../../assets/RGSC.png'
+import consolePic from '../../assets/console.png'
+import tudunum from '../../assets/tudunum.png'
+import TISZA_Vilag from '../../assets/TISZA Világ.png'
 import Sabby from '../../assets/sabby.png'
 const ArrayProject = [
   {
-    pic_url: TISZA_Világ.src || TISZA_Világ,
+    pic_url: TISZA_Vilag.src || TISZA_Vilag,
     title: 'TISZA Világ',
     description: 'A community engagement platform developed for Hungary’s Tisztelet és Szabadság Párt (TISZA Party) enabling users to participate in local civic activities through gamified challenges, events, and volunteer networking. Designed to drive active participation and strengthen community involvemen',
     stack: ['React.ts', 'Asp.Net', 'Mysql'],
@@ -31,7 +31,7 @@ const ArrayProject = [
     github: null,
   },
   {
-    pic_url: console.src || console,
+    pic_url: consolePic.src || consolePic,
     title: 'Console',
     description: 'A centralized admin console designed to manage content and operations across multiple platforms. It enables video uploads, editing and AI-powered subtitle generation, ensuring efficient content management and seamless control over application data and functionalities',
     stack: ['React.ts', 'Asp.Net', 'Mysql'],
