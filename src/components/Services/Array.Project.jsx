@@ -4,47 +4,47 @@ import LaptopIcon from '@mui/icons-material/Laptop';
 import SystemSecurityUpdateGoodIcon from '@mui/icons-material/SystemSecurityUpdateGood';
 import EngineeringIcon from '@mui/icons-material/Engineering';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import reactjs_logo from '../../assets/reactjs.png'
+import PaymentsIcon from '@mui/icons-material/Payments';
 import './Services.styles.css'
 
 const ArrayProject=[
     {
         title:"Website security",
-        description:"I am also expert in authentication service of any website. I can make any website srtongly secure .",
+        description:"Secure authentication systems, role-based access control and data protection using modern best practices like JWT, encryption and API security.",
         icon:<SettingsIcon style={{ textAlign:"center",fontSize:"45px"}} />,
        
     },
     {
       
         title:"Web Devolopment",
-        description:"As a front end devoloper, I am expert in codding. If you need a beautifull dynamic website with all new technology and accessibility.I can provide you this service.",
+        description:"Building scalable, high-performance web applications using React, Next.js and Node.js with clean architecture and modern UI/UX.",
         icon:<LaptopIcon style={{ textAlign:"center",fontSize:"45px"}} />,
        
        
     },
     {
         title:"Responsive Web Design",
-        description:"A responsive design makes your website accessible to all users, regardless of their device.",
+        description:"Creating fast, mobile-first and fully responsive interfaces that deliver seamless experiences across all devices and screen sizes.",
         icon:<SystemSecurityUpdateGoodIcon style={{ textAlign:"center",fontSize:"45px"}} />,
        
     },
     {
        
-        title:"Fixing problems",
-        description:"Website problem & bugs it’s a common problem for every website. Don’t worry about bugs and problems. I can fix any type of problems & bugs for any website.",
+        title:"Bug Fixing & Optimization",
+        description:"Debugging complex issues, improving performance and optimizing applications for speed, scalability and reliability.",
         icon:<EngineeringIcon style={{ textAlign:"center",fontSize:"45px"}} />,
       
     },
     {
       
-        title:"Frogpay",
-        description:"This App is build for international client using Reactjs.Its Basically an cryptocurrency payment App",
-        icon:<img src={reactjs_logo}/>,
+        title:"Payment & Fintech Solutions",
+        description:"Developing secure payment systems, integrating gateways and building transaction workflows for real-world fintech applications.",
+        icon:<PaymentsIcon style={{ textAlign:"center",fontSize:"45px"}} />,
     },
     {
        
-        title:"E-Commerce Website",
-        description:"Integration of E-commerce platforms, payment gateways, custom product templates, and more.",
+        title:"E-Commerce Solutions",
+        description:"Building complete e-commerce platforms with payment integration, product management and scalable backend systems.",
         icon:< AddShoppingCartIcon style={{ textAlign:"center",fontSize:"45px"}} />,
        
     },

@@ -14,7 +14,7 @@ const socials = [
 
 const freelance = [
   {
-    href:  'https://www.fiverr.com/',
+    href:  'https://www.fiverr.com/users/muneebmughal840/manage_gigs',
     label: 'Fiverr',
     color: '#1dbf73',
     logo: (
@@ -27,7 +27,7 @@ const freelance = [
     ),
   },
   {
-    href:  'https://www.upwork.com/',
+    href:  'https://www.upwork.com/freelancers/~0167cdbb866059d3be',
     label: 'Upwork',
     color: '#14a800',
     logo: (
@@ -131,9 +131,6 @@ const Footer = () => (
       <div className="footer-bottom">
         <span className="footer-copy">
           © {new Date().getFullYear()} <strong>Muhammad Muneeb</strong>. All rights reserved.
-        </span>
-        <span className="footer-made">
-          Made with <span className="footer-heart">♥</span> using Next.js
         </span>
       </div>
     </div>

@@ -90,3 +90,29 @@
   color: #475569; text-decoration: none; transition: var(--transition);
 }
 .proj-link:hover { color: #60a5fa; }
+
+/* ─── TECH STACK ────────────────────────────────────────── */
+.proj-stack {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin-bottom: 16px;
+}
+.proj-tech-tag {
+  font-family: var(--font-mono);
+  font-size: 11px; font-weight: 500;
+  color: #60a5fa;
+  background: #60a5fa12;
+  border: 1px solid #60a5fa25;
+  padding: 3px 10px; border-radius: 100px;
+  white-space: nowrap;
+  transition: var(--transition);
+}
+.proj-tech-tag:hover {
+  background: #60a5fa22;
+  border-color: #60a5fa50;
+}
+
+.proj-link-disabled {
+  color: #334155;
+  font-style: italic;
+  cursor: default;
+}
