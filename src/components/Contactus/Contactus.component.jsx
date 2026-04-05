@@ -1,224 +1,190 @@
-import './Contactus.styles.css';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import SendIcon from '@mui/icons-material/Send';
-import React, { useRef, useState } from 'react';
-import emailjs from '@emailjs/browser';
-import InputAdornment from '@mui/material/InputAdornment';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import TextField from '@mui/material/TextField';
-import AccountCircle from '@mui/icons-material/AccountCircle';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import YouTubeIcon from '@mui/icons-material/YouTube';
+'use client'
+import './Contactus.styles.css'
+import React, { useRef, useState, useEffect } from 'react'
+import emailjs from '@emailjs/browser'
+import { ToastContainer, toast } from 'react-toastify'
+import InstagramIcon from '@mui/icons-material/Instagram'
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
+import GitHubIcon from '@mui/icons-material/GitHub'
+import YouTubeIcon from '@mui/icons-material/YouTube'
+import SendIcon from '@mui/icons-material/Send'
 import Aos from 'aos'
-import Grid from '@mui/material/Grid';
-import 'aos/dist/aos.css'
-import { useEffect } from 'react'
-const Contactus=()=>{
-  useEffect(()=>{
-    Aos.init({duration:2000})
-   },[])
-  const form = useRef();
 
-  //for form validation
-  const [namecheck,setnamecheck] = useState(true)
-  const [emailcheck,setemailcheck] = useState(true)
-  const [emailvalid,setemailvalid] = useState(false)
-  const [msgcheck,setmsgcheck] = useState(true)
-  const [formname,setformname] = useState(false)
-  const [formemail,setformemail] = useState(false)
-  const [formmsg,setformmsg] = useState(false)
-//text field values
-  const [nameval,setnameval] = useState("")
-  const [emailval,setemailval] = useState("")
-  const [msgval,setmsgval] = useState("")
+const socialLinks = [
+  { href: 'https://www.instagram.com/muhammad_muneeb01/', icon: <InstagramIcon />, label: 'Instagram' },
+  { href: 'https://www.linkedin.com/in/muhammad-muneeb-82b5791b6/', icon: <LinkedInIcon />, label: 'LinkedIn' },
+  { href: 'https://github.com/muneebashfaq', icon: <GitHubIcon />, label: 'GitHub' },
+  { href: 'https://www.youtube.com/channel/UC1Cl2U0l8OWRvaJR4ZgQwfw', icon: <YouTubeIcon />, label: 'YouTube' },
+]
 
-  const notify = () => toast.success('Successfully Send Your Message!!!', {
-    position: "bottom-center",
-    autoClose: 4000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    theme: "colored",
-    });
+const Contactus = () => {
+  useEffect(() => { Aos.init({ duration: 900, once: true }) }, [])
 
+  const form = useRef()
+  const [fields, setFields] = useState({ user_name: '', user_email: '', message: '' })
+  const [errors, setErrors]   = useState({})
+  const [sending, setSending] = useState(false)
 
+  const emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+
+  const validate = (name, value) => {
+    if (!value) return 'Required'
+    if (name === 'user_email' && !emailRegex.test(value)) return 'Invalid email'
+    return ''
+  }
+
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setFields(f => ({ ...f, [name]: value }))
+    setErrors(er => ({ ...er, [name]: validate(name, value) }))
+  }
 
   const sendEmail = (e) => {
-    e.preventDefault();
+    e.preventDefault()
+    const newErrors = {
+      user_name:  validate('user_name',  fields.user_name),
+      user_email: validate('user_email', fields.user_email),
+      message:    validate('message',    fields.message),
+    }
+    setErrors(newErrors)
+    if (Object.values(newErrors).some(Boolean)) return
 
-    if(formemail === true && formmsg === true && formname === true){
-      setnameval("")
-      setemailval("")
-      setmsgval("")
-      setformname(false)
-      setformemail(false)
-      setformmsg(false)
+    setSending(true)
     emailjs.sendForm('service_47h4va7', 'template_6ub9p8v', form.current, 'wHTAn1YPSyWt8yS2F')
-
-      .then((result) => {
-        notify()
-          console.log(result.text);
-      }, (error) => {
-          console.log(error.text);
-      });
-    }else{
-      alert("Please Correctly Fill The Form")
-
-    }
-
-  };
- 
-
-  const validation=(e)=>{
-  var  val =e.target.value
-  var  name = e.target.name
-
-  if(name === "user_name"){
-    setnameval(val)
-    if (!val) {
-      setformname(false)
-      setnamecheck(false)
-      }else{
-        setnamecheck(true)
-        setformname(true)
-      }
-
-    }else if(name === "user_email"){
-      setemailval(val)
-      var validRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
-
-      if (val) {
-        setemailcheck(true)
-        if(val.match(validRegex)){
-          setemailvalid(false)
-          setformemail(true)
-        }
-        else{
-          setformemail(false)
-          setemailvalid(true)
-
-        }
-        }
-        else{
-          setformemail(false)
-          setemailcheck(false)
-         
-        }
-
-    }else if(name ==="message"){
-      setmsgval(val)
-      if (!val) {
-        setformmsg(false)
-        setmsgcheck(false)
-
-        }else{
-          setformmsg(true)
-          setmsgcheck(true)
-        }
-
-    }
-
+      .then(() => {
+        toast.success('Message sent successfully!', { theme: 'dark', position: 'bottom-center' })
+        setFields({ user_name: '', user_email: '', message: '' })
+      })
+      .catch(() => toast.error('Failed to send. Try again.', { theme: 'dark' }))
+      .finally(() => setSending(false))
   }
-    return(<>
-   
-    <h1 className='contactus'>Get In Touch</h1>
-      <Box sx={{ flexGrow: 1 }} data-aos="fade-right">
-      <Grid container spacing={2}>
-        <Grid item xs={11}>
-        <div className="contact_body" >
-        <form ref={form} onSubmit={sendEmail}>
-    <Box sx={{ '& > :not(style)': { m: 1, width: { xs:210, sm: 370, md: 420, lg: 470, xl: 1000 } } }}>
-    
-      <TextField
-        id="input-with-icon-textfield"
-        label="Your Name"
-        name="user_name"
-        value={nameval}
-        onChange={validation}
-        onClick={validation}
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <AccountCircle />
-            </InputAdornment>
-          ),
-        }}
-        variant="standard"
-      /><br/>
-      {namecheck?"":<label className='show_error'>Required Field Must Fill</label>}
-      
-      <br/>
-        <TextField
-        id="input-with-icon-textfield"
-        name="user_email"
-        label="Your Email"
-        value={emailval}
-        onChange={validation}
-        onClick={validation}
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <AccountCircle />
-            </InputAdornment>
-          ),
-        }}
-        variant="standard"
-      />
-<br/>
-{emailcheck?emailvalid?<label className='show_error'>Email Not Valid</label>:"":<label className='show_error'>Required Field Must Fill</label>}
-      <br/>
-<TextField
-          id="standard-multiline-static"
-          label="Your Message"
-          name="message"
-          multiline
-          value={msgval}
-          rows={4}
-          onChange={validation}
-          onClick={validation}
-          variant="standard"
-        />
-        <br/>
-    {msgcheck?"":<label className='show_error'>Required Field Must Fill</label>}
-      <br/>
-    </Box>
 
-      <Button variant="contained" type="submit" endIcon={<SendIcon />} color="secondary">
-        Send
-      </Button>
-      <ToastContainer
-position="top-right"
-autoClose={4000}
-hideProgressBar={false}
-newestOnTop={false}
-closeOnClick
-rtl={false}
-pauseOnFocusLoss
-draggable
-pauseOnHover
-theme="colored"
-/>
+  return (
+    <section className="contact-section">
+      <div className="container">
+        <span className="section-tag">get in touch</span>
+        <h2 className="section-title">Contact <span>Me</span></h2>
+        <div className="section-divider"></div>
 
-    </form>
-    </div>
-        </Grid>
-        <Grid item xs={1}>
-        <div className="sidebar_contact" data-aos="fade-right">
-  <a href='https://www.instagram.com/muhammad_muneeb01/' target='__blank' className='contact_icon'><InstagramIcon/></a>
-  <a href='https://www.linkedin.com/in/muhammad-muneeb-82b5791b6/' target='__blank' className='contact_icon'><LinkedInIcon/></a>
-  <a href='https://github.com/muneebashfaq' target='__blank' className='contact_icon'><GitHubIcon/></a>
-  <a href='https://www.youtube.com/channel/UC1Cl2U0l8OWRvaJR4ZgQwfw' target='__blank' className='contact_icon'><YouTubeIcon/></a>
+        <div className="row gy-5 align-items-start">
+          {/* Form */}
+          <div className="col-lg-7" data-aos="fade-right">
+            <div className="terminal-card">
+              <div className="terminal-header">
+                <div className="dots">
+                  <span className="dot dot-red"></span>
+                  <span className="dot dot-yellow"></span>
+                  <span className="dot dot-green"></span>
+                </div>
+                <span className="terminal-title">send_message.js</span>
+                <div style={{ width: 60 }}></div>
+              </div>
+              <div className="terminal-body">
+                <form ref={form} onSubmit={sendEmail} noValidate>
+                  <div className="term-field">
+                    <label className="term-label">
+                      <span className="tok-kw">const</span>{' '}
+                      <span className="tok-var">name</span>{' '}
+                      <span className="tok-op">=</span>
+                    </label>
+                    <input
+                      className={`term-input ${errors.user_name ? 'term-input-error' : ''}`}
+                      type="text"
+                      name="user_name"
+                      value={fields.user_name}
+                      onChange={handleChange}
+                      placeholder='"Your full name"'
+                      autoComplete="name"
+                    />
+                    {errors.user_name && <span className="term-error">{errors.user_name}</span>}
+                  </div>
 
-</div>
-        </Grid>
-      </Grid>
-    </Box>
-    </>)
+                  <div className="term-field">
+                    <label className="term-label">
+                      <span className="tok-kw">const</span>{' '}
+                      <span className="tok-var">email</span>{' '}
+                      <span className="tok-op">=</span>
+                    </label>
+                    <input
+                      className={`term-input ${errors.user_email ? 'term-input-error' : ''}`}
+                      type="email"
+                      name="user_email"
+                      value={fields.user_email}
+                      onChange={handleChange}
+                      placeholder='"your@email.com"'
+                      autoComplete="email"
+                    />
+                    {errors.user_email && <span className="term-error">{errors.user_email}</span>}
+                  </div>
+
+                  <div className="term-field">
+                    <label className="term-label">
+                      <span className="tok-kw">const</span>{' '}
+                      <span className="tok-var">message</span>{' '}
+                      <span className="tok-op">=</span>
+                    </label>
+                    <textarea
+                      className={`term-input term-textarea ${errors.message ? 'term-input-error' : ''}`}
+                      name="message"
+                      value={fields.message}
+                      onChange={handleChange}
+                      rows={5}
+                      placeholder='"Tell me about your project..."'
+                    />
+                    {errors.message && <span className="term-error">{errors.message}</span>}
+                  </div>
+
+                  <button type="submit" className="term-submit" disabled={sending}>
+                    {sending
+                      ? <><span className="cursor-blink">▌</span> Sending...</>
+                      : <><SendIcon style={{ fontSize: 16 }} /> Send Message</>
+                    }
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          {/* Info + socials */}
+          <div className="col-lg-5" data-aos="fade-left">
+            <div className="contact-info-card">
+              <h3 className="contact-info-title">Let's work together</h3>
+              <p className="contact-info-desc">
+                I'm always open to discussing new projects, creative ideas, or
+                opportunities to be part of your vision.
+              </p>
+              <div className="contact-info-item">
+                <span className="contact-info-label">
+                  <span className="tok-kw">const</span> email
+                </span>
+                <span className="contact-info-value">mmuneeb840@gmail.com</span>
+              </div>
+              <div className="contact-info-item">
+                <span className="contact-info-label">
+                  <span className="tok-kw">const</span> phone
+                </span>
+                <span className="contact-info-value">+92324-8406920</span>
+              </div>
+              <div className="contact-info-item">
+                <span className="contact-info-label">
+                  <span className="tok-kw">const</span> location
+                </span>
+                <span className="contact-info-value">Lahore, Pakistan</span>
+              </div>
+              <div className="contact-socials">
+                {socialLinks.map((s, i) => (
+                  <a key={i} href={s.href} target="_blank" rel="noreferrer" className="social-link" aria-label={s.label}>
+                    {s.icon}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ToastContainer position="bottom-center" theme="dark" />
+    </section>
+  )
 }
+
 export default Contactus

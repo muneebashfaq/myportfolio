@@ -1,6 +1,6 @@
+'use client'
 import { Card } from 'antd';
 import { Button } from 'antd';
-import 'antd/dist/antd.css';
 const { Meta } = Card;
 
 const Cards = ({title,pic_url,description,github})=>{

@@ -1,3 +1,4 @@
+'use client'
 import ecommerce from '../../assets/ecommerce.PNG'
 import lms from '../../assets/lms.png'
 import vms from '../../assets/vms.PNG'

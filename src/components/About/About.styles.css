@@ -1,59 +1,156 @@
-h1.About{
-    text-align: center;
-    
+/* ─── ABOUT SECTION ─────────────────────────────────────── */
+.about-section {
+  padding: 90px 0 100px;
+  background-color: var(--bg-secondary);
 }
 
-img.About{
-    width: 100%;
-  max-width: 400px;
-  height: auto;
+/* ─── IMAGE ─────────────────────────────────────────────── */
+.about-img-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 24px;
+}
+
+.about-img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
   border-radius: 20px;
-  border:1px solid black;
-  box-shadow: 5px 10px 8px #888888;
-
+  border: 1px solid var(--border);
+  position: relative;
+  z-index: 1;
+  display: block;
 }
 
+.about-img-ring {
+  position: absolute;
+  inset: -8px;
+  border-radius: 26px;
+  background: linear-gradient(135deg, var(--blue), var(--purple));
+  z-index: 0;
+  opacity: 0.4;
+}
 
-h1.About::after { 
-  content:"";
-  display:block;
-  width: 100px;
-  max-width:20%;
-  border-bottom: 4px solid orange;
-  margin: 1px auto 0;
-  }
+.about-img-badge {
+  position: absolute;
+  bottom: -16px;
+  right: -16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 16px;
+  text-align: center;
+  z-index: 2;
+  box-shadow: var(--shadow-card);
+}
 
-  p.about{
-    font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-  }
+.badge-num {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--blue);
+  line-height: 1;
+}
 
-  @media screen and (max-width: 768px) {
-    img.About{
-        display: block;
-      margin-left: auto;
-      margin-right: auto;
-        margin-top: 50px;
-        width: 100%;
-        max-width: 400px;
-        height: auto;
-        border-radius: 20px;
-        border:1px solid black;
-        box-shadow: 5px 10px 8px #888888;
-    }
-    .container.intro{
-        color: white;
-        margin-top:50px;
-        padding-bottom:50px;
-    
-    }
-    h2.About{
-      margin-top:20px;
-      text-align: center;
-    }
-    
-  }
+.badge-txt {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+  line-height: 1.4;
+}
 
-  div.about_info{
-    text-align: justify;
-  }
+/* ─── ABOUT CARD ─────────────────────────────────────────── */
+.about-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.about-card-header {
+  padding: 14px 20px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.about-card-title {
+  font-family: var(--font-mono);
+  font-size: 14px;
+}
+
+.about-card-body { padding: 28px 24px; }
+
+.about-card-footer {
+  padding: 12px 20px;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 14px;
+}
+
+.about-role {
+  font-family: var(--font-sans);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.about-bio {
+  font-size: 14.5px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+/* ─── INFO GRID ──────────────────────────────────────────── */
+.about-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  flex-wrap: wrap;
+}
+
+.info-item-full { grid-column: 1 / -1; }
+
+.info-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.info-value {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--text-primary);
+  text-decoration: none;
+  margin-left: auto;
+}
+
+a.info-value:hover { color: var(--blue); }
+
+/* ─── RESPONSIVE ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .about-img { width: 240px; height: 240px; }
+  .about-info-grid { grid-template-columns: 1fr; }
+  .info-item-full { grid-column: auto; }
+  .info-value { margin-left: 0; }
+}

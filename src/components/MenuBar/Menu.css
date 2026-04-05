@@ -1,28 +1,181 @@
-a.Menu{
-    text-decoration: none;
-    color: white;
-}
-.menu2{
-    margin-right:100px;
-  
-}
-
-.color_dark{
-    background-color:rgb(39, 39, 39);
-    padding-top:50px;
-    padding-bottom:100px;
-}
-
-.color_light{
-    background-color:white;
-    padding-top:50px;
-    padding-bottom:100px;
-}
-.footer{
-    background-color:rgb(39, 39, 39);
-    padding-top:20px;
-    padding-bottom:20px;
-    color: white;
-    text-align: center;
+/* ─── NAVBAR ────────────────────────────────────────────── */
+.nav-custom {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(13, 17, 23, 0.92) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid #30363d !important;
+  box-shadow: none !important;
+  transition: all 0.3s ease !important;
 }
 
+.nav-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 64px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ─── LOGO ──────────────────────────────────────────────── */
+.nav-logo {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  letter-spacing: -0.5px;
+}
+
+.nav-logo .logo-bracket { color: var(--blue); }
+.nav-logo .logo-slash   { color: var(--purple); }
+.nav-logo .logo-name    { color: var(--text-primary); font-size: 15px; }
+
+/* ─── NAV LINKS ─────────────────────────────────────────── */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+a.nav-link-item {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: var(--transition);
+  position: relative;
+  border: 1px solid transparent;
+}
+
+a.nav-link-item::before {
+  content: attr(data-index);
+  color: var(--blue);
+  font-size: 11px;
+  margin-right: 4px;
+  opacity: 0.6;
+}
+
+a.nav-link-item:hover {
+  color: var(--text-primary);
+  background: var(--bg-hover);
+  border-color: var(--border);
+}
+
+/* ─── HAMBURGER (mobile) ─────────────────────────────────── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: transparent;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+/* ─── MOBILE DRAWER ─────────────────────────────────────── */
+.mobile-drawer {
+  background: var(--bg-secondary) !important;
+  border-right: 1px solid var(--border) !important;
+}
+
+.mobile-drawer-logo {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.mobile-drawer-logo span { color: var(--blue); }
+
+a.mobile-nav-link {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+a.mobile-nav-link:hover {
+  color: var(--blue);
+  background: var(--bg-hover);
+}
+
+/* ─── SCROLL-TO-TOP BUTTON ──────────────────────────────── */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 999;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.scroll-top-btn:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+  background: #58a6ff0d;
+  transform: translateY(-2px);
+}
+
+/* ─── SECTION WRAPPERS ──────────────────────────────────── */
+.color_dark {
+  background-color: #0d1117 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.color_light {
+  background-color: #161b22 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.footer {
+  background-color: #161b22 !important;
+  border-top: 1px solid #30363d !important;
+  padding: 40px 0 !important;
+}
+
+@media (max-width: 960px) {
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+}

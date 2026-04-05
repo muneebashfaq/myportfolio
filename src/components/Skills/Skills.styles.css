@@ -1,14 +1,106 @@
-h1.skills{
-    text-align: center;
+/* ─── SKILLS SECTION ─────────────────────────────────────── */
+.skills-section {
+  padding: 90px 0 100px;
+  background-color: var(--bg-secondary);
 }
-h1.skills::after { 
-    content:"";
-    display:block;
-    width: 100px;
-    border-bottom: 4px solid orange;
-    margin: 1px auto 0;
-    }
 
-.container.skills{
-    padding-bottom: 50px;
+/* ─── SKILL GROUP ─────────────────────────────────────────── */
+.skill-group {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  height: 100%;
+}
+
+.skill-group-header {
+  padding: 14px 20px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.skill-group-label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.tok-comment { color: var(--text-muted); }
+
+/* ─── SKILL ITEM ─────────────────────────────────────────── */
+.skill-item { padding: 16px 20px; border-bottom: 1px solid var(--border); }
+.skill-item:last-child { border-bottom: none; }
+
+.skill-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.skill-name {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  flex: 1;
+}
+
+.skill-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  background: var(--bg-hover);
+  padding: 2px 8px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+}
+
+.skill-pct {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  min-width: 36px;
+  text-align: right;
+}
+
+/* ─── PROGRESS BAR ───────────────────────────────────────── */
+.skill-track {
+  height: 6px;
+  background: var(--bg-hover);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  border-radius: 3px;
+  width: 0;
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── TECH TAGS ──────────────────────────────────────────── */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 48px;
+  justify-content: center;
+}
+
+.tech-tag {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--blue);
+  background: #58a6ff0d;
+  border: 1px solid #58a6ff30;
+  padding: 6px 16px;
+  border-radius: 6px;
+  transition: var(--transition);
+  cursor: default;
+}
+
+.tech-tag:hover {
+  background: #58a6ff20;
+  border-color: var(--blue);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow-blue);
 }

@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ─── CSS VARIABLES ─────────────────────────────────────── */
+:root {
+  --bg-primary:    #0d1117;
+  --bg-secondary:  #161b22;
+  --bg-card:       #21262d;
+  --bg-hover:      #30363d;
+  --border:        #30363d;
+  --border-accent: #58a6ff44;
+
+  --blue:     #58a6ff;
+  --green:    #3fb950;
+  --purple:   #d2a8ff;
+  --orange:   #ffa657;
+  --red:      #f85149;
+  --yellow:   #e3b341;
+  --pink:     #ff7b72;
+
+  --text-primary:   #e6edf3;
+  --text-secondary: #8b949e;
+  --text-muted:     #484f58;
+
+  --font-mono:  'Fira Code', 'Courier New', monospace;
+  --font-sans:  'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --shadow-glow-blue:   0 0 20px #58a6ff33;
+  --shadow-glow-green:  0 0 20px #3fb95033;
+  --shadow-card:        0 8px 32px rgba(0,0,0,0.4);
+  --shadow-card-hover:  0 16px 48px rgba(0,0,0,0.6);
+
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── RESET & BASE ──────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+/* Override antd/dist/antd.css which forces body { background: #fff } */
+html,
+body,
+#__next {
+  background-color: #0d1117 !important;
+  color: #e6edf3 !important;
+}
+
+body {
+  background-color: #0d1117 !important;
+  color: #e6edf3 !important;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ─── CUSTOM SCROLLBAR ──────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb {
+  background: var(--blue);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--purple); }
+
+/* ─── SELECTION ─────────────────────────────────────────── */
+::selection {
+  background: var(--blue);
+  color: var(--bg-primary);
+}
+
+/* ─── SCROLL PROGRESS BAR ───────────────────────────────── */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--purple));
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
+/* ─── SECTION WRAPPERS ──────────────────────────────────── */
+.section-dark {
+  background-color: var(--bg-primary);
+  padding: 90px 0 100px;
+  position: relative;
+}
+
+.section-mid {
+  background-color: var(--bg-secondary);
+  padding: 90px 0 100px;
+  position: relative;
+}
+
+.section-dark::before,
+.section-mid::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 50% at 50% -20%, #58a6ff0d, transparent);
+  pointer-events: none;
+}
+
+/* ─── SECTION HEADING ───────────────────────────────────── */
+.section-tag {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--green);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.section-tag::before { content: '// '; color: var(--text-muted); }
+
+.section-title {
+  font-family: var(--font-sans);
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  text-align: center;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.section-title span { color: var(--blue); }
+
+.section-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--purple));
+  border-radius: 2px;
+  margin: 0 auto 60px;
+}
+
+/* ─── ANIMATED GRADIENT BACKGROUND ─────────────────────── */
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ─── GLOW PULSE ────────────────────────────────────────── */
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px #58a6ff33; }
+  50%       { box-shadow: 0 0 40px #58a6ff66, 0 0 80px #58a6ff22; }
+}
+
+/* ─── FLOAT ─────────────────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-12px); }
+}
+
+/* ─── BLINK CURSOR ──────────────────────────────────────── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ─── SLIDE IN ──────────────────────────────────────────── */
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ─── GLITCH ────────────────────────────────────────────── */
+@keyframes glitch {
+  0%   { clip-path: inset(0 0 98% 0); transform: translate(-2px, 0); }
+  10%  { clip-path: inset(40% 0 40% 0); transform: translate(2px, 0); }
+  20%  { clip-path: inset(80% 0 0 0); transform: translate(-2px, 0); }
+  30%  { clip-path: inset(0 0 80% 0); transform: translate(2px, 0); }
+  40%  { clip-path: inset(60% 0 20% 0); transform: translate(-2px, 0); }
+  50%  { clip-path: inset(20% 0 60% 0); transform: translate(2px, 0); }
+  60%  { clip-path: inset(0 0 0 0); transform: translate(0, 0); }
+  100% { clip-path: inset(0 0 0 0); transform: translate(0, 0); }
+}
+
+/* ─── CODE LINE REVEAL ──────────────────────────────────── */
+@keyframes lineReveal {
+  from { opacity: 0; transform: translateX(-10px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ─── FOOTER OVERRIDE ───────────────────────────────────── */
+.footer {
+  background-color: var(--bg-secondary) !important;
+  border-top: 1px solid var(--border);
+  padding: 40px 0 !important;
+}

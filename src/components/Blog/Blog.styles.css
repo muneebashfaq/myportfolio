@@ -1,17 +1,97 @@
-h1.blog{
-    text-align: center;
-    color: white;
+/* ─── BLOG SECTION ───────────────────────────────────────── */
+.blog-section {
+  padding: 90px 0 100px;
+  background-color: var(--bg-primary);
 }
-h1.blog::after { 
-    content:"";
-    display:block;
-    width: 100px;
-    border-bottom: 4px solid red;
-    margin: 1px auto 0;
-    }
-.blog_card{
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
+.blog-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: var(--transition);
 }
+
+.blog-card:hover {
+  border-color: var(--border-accent);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.blog-img-wrap {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.blog-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  display: block;
+  filter: brightness(0.6);
+}
+
+.blog-card:hover .blog-img { transform: scale(1.04); }
+
+.blog-coming-tag {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blog-coming-tag span {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--purple);
+  background: #d2a8ff15;
+  border: 1px solid #d2a8ff40;
+  padding: 8px 20px;
+  border-radius: 100px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.blog-body { padding: 24px; }
+
+.blog-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.blog-meta-text {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.blog-title {
+  font-family: var(--font-sans);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.blog-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.blog-footer {
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.blog-status-badge .tok-bool { color: var(--orange); }

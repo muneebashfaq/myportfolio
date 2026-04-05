@@ -1,46 +1,52 @@
-import { Card } from 'antd';
-import { Button } from 'antd';
-import blog_pic from '../../assets/blog.jpg';
-import 'antd/dist/antd.css';
-import './Blog.styles.css';
+'use client'
+import blog_pic from '../../assets/blog.jpg'
+import './Blog.styles.css'
 import Aos from 'aos'
-import 'aos/dist/aos.css'
 import { useEffect } from 'react'
-const { Meta } = Card;
-const Blog=()=>{
-  useEffect(()=>{
-    Aos.init({duration:2000})
-   },[])
-    return(<>
-    <div className="container">
-        <h1 className="blog">My Blogs</h1>
-        <div className="row blog" data-aos="fade-right">
-            <div className='blog_card'>
-        <Card
-    style={{
-      width: "300px",
-      height:"420px",
-      marginTop:"30px",
-      boxShadow: "5px 10px 18px #888888",
-    }}
-    cover={
-      <img
-        alt="example"
-        src={blog_pic}
-      />
-    }
-    actions={[
-        <Button type="primary" style={{backgroundColor:"purple"}}>COMING SOON</Button>,  
-    ]}
-  >
-    <Meta
-      title={"My Blogs Side"}
-      description={"This is my official blogs side where i post my blogs in future In Sha Allah"}
-    />
-  </Card>
+import ArticleIcon from '@mui/icons-material/Article'
+
+const Blog = () => {
+  useEffect(() => { Aos.init({ duration: 900, once: true }) }, [])
+
+  return (
+    <section className="blog-section">
+      <div className="container">
+        <span className="section-tag">writing</span>
+        <h2 className="section-title">My <span>Blogs</span></h2>
+        <div className="section-divider"></div>
+
+        <div className="row justify-content-center">
+          <div className="col-lg-5 col-md-7" data-aos="fade-up">
+            <div className="blog-card">
+              <div className="blog-img-wrap">
+                <img src={blog_pic.src || blog_pic} alt="blog" className="blog-img" />
+                <div className="blog-coming-tag">
+                  <span>Coming Soon</span>
+                </div>
+              </div>
+              <div className="blog-body">
+                <div className="blog-meta">
+                  <ArticleIcon style={{ fontSize: 14, color: 'var(--text-muted)' }} />
+                  <span className="blog-meta-text">Technical Articles</span>
+                </div>
+                <h4 className="blog-title">My Official Blog Site</h4>
+                <p className="blog-desc">
+                  I'll be posting articles on web development, React, Django,
+                  and modern JavaScript. Stay tuned — great content is coming!
+                </p>
+                <div className="blog-footer">
+                  <span className="blog-status-badge">
+                    <span className="tok-bool">false</span>
+                    {' '}// published
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        </div>
-    </div>
-    </>)
+      </div>
+    </section>
+  )
 }
+
 export default Blog

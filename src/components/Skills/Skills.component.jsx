@@ -1,73 +1,107 @@
+'use client'
 import './Skills.styles.css'
 import Aos from 'aos'
-import 'aos/dist/aos.css'
-import { useEffect } from 'react'
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import ProgressBar from './ProgressBar';
+import { useEffect, useState } from 'react'
 
+const skillGroups = [
+  {
+    label: 'frontend',
+    color: '#58a6ff',
+    skills: [
+      { name: 'HTML5',      level: 90, tag: 'markup' },
+      { name: 'CSS3',       level: 90, tag: 'styling' },
+      { name: 'JavaScript', level: 75, tag: 'language' },
+      { name: 'ReactJs',    level: 82, tag: 'framework' },
+      { name: 'Redux',      level: 80, tag: 'state' },
+      { name: 'TypeScript', level: 70, tag: 'language' },
+    ],
+  },
+  {
+    label: 'backend',
+    color: '#3fb950',
+    skills: [
+      { name: 'Python',       level: 75, tag: 'language' },
+      { name: 'Django',       level: 72, tag: 'framework' },
+      { name: 'RESTful APIs', level: 75, tag: 'api' },
+      { name: 'MySQL',        level: 70, tag: 'database' },
+    ],
+  },
+]
 
-const Skills =()=>{
-    
-    useEffect(()=>{
-        Aos.init({duration:2000})
-       },[])
-    return(<>
-    <div className='container skills'>
-<div className='row'>
-<h1 className='skills'>My Skills</h1>
+const techTags = ['React', 'Next.js', 'TypeScript', 'Django', 'Python', 'Git', 'REST APIs', 'MySQL', 'Redux', 'CSS3']
 
+// Each bar manages its own width state so the transition is guaranteed
+const SkillBar = ({ name, level, color, tag }) => {
+  const [width, setWidth] = useState(0)
 
-<div className='col-xl-6 col-lg-6  skills' data-aos="zoom-in">
+  useEffect(() => {
+    // Double rAF: first frame paints width:0, second frame starts transition to target
+    const id1 = requestAnimationFrame(() => {
+      const id2 = requestAnimationFrame(() => setWidth(level))
+      return () => cancelAnimationFrame(id2)
+    })
+    return () => cancelAnimationFrame(id1)
+  }, [level])
 
-<h5 className='skills'>HTML</h5>
-<Box sx={{ flexGrow: 1 }}>
-      <ProgressBar  variant="determinate" value={90} color={"#1a90ff"} />
- 
-    <h5 className='skills'>CSS</h5>
-
-<ProgressBar  variant="determinate" value={90} color={"orange"} />
-   
-    <h5 className='skills'>JavaScript</h5>
-
-<ProgressBar  variant="determinate" value={70} color={"yellow"} />
-  
-    <h5 className='skills'>ReactJs</h5>
-
-<ProgressBar  variant="determinate" value={80} color={"blue"} />
-    
-    <h5 className='skills'>Redux</h5>
-
-<ProgressBar  variant="determinate" value={80} color={"brown"} />
-    </Box>
-
-</div>
-
-
-<div className='col-xl-6 col-lg-6' data-aos="zoom-in">
-<h5 className='skills'>TypeScript</h5>
-
-<Box sx={{ flexGrow: 1 }}>
-<ProgressBar  variant="determinate" value={70} color={"brown"} />
-    <h5 className='skills'>RestFul APIs</h5>
-
-<ProgressBar  variant="determinate" value={70} color={"blue"} />
-    <h5 className='skills'>python</h5>
-
-<ProgressBar  variant="determinate" value={70} color={"orange"} />
-    <h5 className='skills'>Django</h5>
-
-<ProgressBar  variant="determinate" value={70} color={"yellow"} />
-     <h5 className='skills'>Database(MYSQL)</h5>
-
-    <ProgressBar  variant="determinate" value={70} color={"orange"} />
-   
-    </Box>
-</div>
-</div>
+  return (
+    <div className="skill-item">
+      <div className="skill-meta">
+        <span className="skill-name">
+          <span className="tok-kw">const </span>
+          <span style={{ color }}>{name}</span>
+        </span>
+        <span className="skill-badge">{tag}</span>
+        <span className="skill-pct" style={{ color }}>{level}%</span>
+      </div>
+      <div className="skill-track">
+        <div
+          className="skill-fill"
+          style={{
+            width: `${width}%`,
+            background: `linear-gradient(90deg, ${color}99, ${color})`,
+          }}
+        />
+      </div>
     </div>
-    
-    </>)
+  )
+}
+
+const Skills = () => {
+  useEffect(() => { Aos.init({ duration: 900, once: true }) }, [])
+
+  return (
+    <section className="skills-section">
+      <div className="container">
+        <span className="section-tag">expertise</span>
+        <h2 className="section-title">My <span>Skills</span></h2>
+        <div className="section-divider"></div>
+
+        <div className="row gy-4" data-aos="fade-up">
+          {skillGroups.map((group, gi) => (
+            <div className="col-lg-6" key={gi}>
+              <div className="skill-group">
+                <div className="skill-group-header">
+                  <span className="skill-group-label">
+                    <span className="tok-comment">{'// '}</span>
+                    {group.label}
+                  </span>
+                </div>
+                {group.skills.map((s, si) => (
+                  <SkillBar key={si} {...s} color={group.color} />
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="tech-tags" data-aos="fade-up">
+          {techTags.map((tag, i) => (
+            <span key={i} className="tech-tag">{tag}</span>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
 }
 
 export default Skills

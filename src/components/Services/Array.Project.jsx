@@ -1,3 +1,4 @@
+'use client'
 import SettingsIcon from '@mui/icons-material/Settings';
 import LaptopIcon from '@mui/icons-material/Laptop';
 import SystemSecurityUpdateGoodIcon from '@mui/icons-material/SystemSecurityUpdateGood';
