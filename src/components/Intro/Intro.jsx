@@ -27,20 +27,30 @@ const CodeBlock = () => {
       { type: 'prop', text: 'stack' }, { type: 'op', text: ': ' },
       { type: 'op', text: '[' },
       { type: 'str', text: '"React"' }, { type: 'op', text: ', ' },
-      { type: 'str', text: '"Next.js"' }, { type: 'op', text: ', ' },
-      { type: 'str', text: '"Django"' },
+      { type: 'str', text:'"Next.js"' }, { type: 'op', text: ', ' },
+      { type: 'str', text: '"Node.js"'},{ type: 'op', text: ', ' },
+      { type: 'str', text: '"TypeScript"'},
       { type: 'op', text: '],' }
     ]},
     { tokens: [
       { type: 'indent', text: '  ' },
       { type: 'prop', text: 'experience' }, { type: 'op', text: ': ' },
-      { type: 'num', text: '3' }, { type: 'op', text: '+' },
-      { type: 'str', text: '" years"' }, { type: 'op', text: ',' }
+      { type: 'num', text: '4' }, { type: 'op', text: '+' },
+      { type: 'str', text: '"years"' }, { type: 'op', text: ',' }
     ]},
     { tokens: [
       { type: 'indent', text: '  ' },
       { type: 'prop', text: 'location' }, { type: 'op', text: ': ' },
       { type: 'str', text: '"Lahore, Pakistan"' }, { type: 'op', text: ',' }
+    ]},
+        { tokens: [
+      { type: 'indent', text: '  ' },
+      { type: 'prop', text: 'focus' }, { type: 'op', text: ': ' },
+      { type: 'op', text: '[' },
+      { type: 'str', text: '"Scalable Apps"' }, { type: 'op', text: ', ' },
+      { type: 'str', text: '"APIs"' }, { type: 'op', text: ', ' },
+      { type: 'str', text: '"Performance"'},
+      { type: 'op', text: '],' }
     ]},
     { tokens: [
       { type: 'indent', text: '  ' },
@@ -144,13 +154,13 @@ const Intro = () => {
               <span className="role-text">Full Stack Developer</span>
             </div>
             <p className="intro-desc">
-              Passionate about crafting <span className="highlight">beautiful</span> and{' '}
-              <span className="highlight">performant</span> web applications using React,
-              Next.js &amp; Django. Turning ideas into code, one commit at a time.
+              Passionate about building <span className="highlight">scalable,secure</span> and{' '}
+              <span className="highlight">high-performance</span> web applications using <span className="highlight"> React,
+              Next.js</span> &amp; <span className="highlight">Node.js</span>. Turning complex ideas into clean, efficient solutions, one commit at a time.
             </p>
             <div className="intro-actions">
-              <a href="/MyCv.pdf" download="MyCv.pdf" className="btn-primary-custom">
-                <DownloadOutlined /> Download CV
+              <a href="/Muhammad Muneeb.pdf" download="Muhammad Muneeb.pdf" className="btn-primary-custom">
+                <DownloadOutlined /> Download Resume
               </a>
               <a href="#Contact" className="btn-secondary-custom">
                 Let's Talk <ArrowRightOutlined />
@@ -158,12 +168,12 @@ const Intro = () => {
             </div>
             <div className="intro-stats">
               <div className="stat">
-                <span className="stat-num">3+</span>
+                <span className="stat-num">4+</span>
                 <span className="stat-label">Years Exp.</span>
               </div>
               <div className="stat-divider"></div>
               <div className="stat">
-                <span className="stat-num">10+</span>
+                <span className="stat-num">40+</span>
                 <span className="stat-label">Projects</span>
               </div>
               <div className="stat-divider"></div>

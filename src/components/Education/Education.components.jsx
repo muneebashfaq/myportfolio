@@ -12,14 +12,14 @@ const education = [
     degree: 'BS (Information Technology)',
     institute: 'University of Punjab',
     period: '2017 — 2021',
-    detail: 'Specialized in web technologies, databases, and software engineering.',
+    detail: 'Focused on software engineering, web technologies and database systems. Built a strong foundation in designing scalable applications and problem-solving.',
   },
 ]
 
 const courses = [
-  { name: 'JavaScript Course',         provider: 'Udemy (Newbie)',                  year: '2021' },
-  { name: 'ReactJs Course',            provider: 'Zero To Mastery Academy (Udemy)', year: '2021' },
-  { name: 'Advance ReactJs Course',    provider: 'Mysterious Academy (Google)',     year: '2022' },
+  { name: 'JavaScript Fundamentals',provider: 'Mastered core JavaScript concepts including ES6+, asynchronous programming and DOM manipulation',year: 'Udemy (2020)' },
+  { name: 'Advanced React.js',provider: 'Deepened expertise in performance optimization, scalable architecture and advanced patterns in React.', year: 'Zero to Mastery (Udemy) (2021)' },
+  { name: 'Node.js & Backend Development',    provider: 'Learned building scalable REST APIs, handling asynchronous operations, authentication and server-side architecture using Node.js and Express', year: 'Zero to Mastery (Udemy) (2022)'  },
 ]
 
 const Education = () => {

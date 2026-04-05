@@ -28,8 +28,8 @@ const About = () => {
               <img src={mypicture.src || mypicture} alt="Muhammad Muneeb" className="about-img" />
               <div className="about-img-ring"></div>
               <div className="about-img-badge">
-                <span className="badge-num">3+</span>
-                <span className="badge-txt">Years<br/>Experience</span>
+                <span className="badge-num">4+</span>
+                <span className="badge-txt">Years<br />Experience</span>
               </div>
             </div>
           </div>
@@ -48,11 +48,10 @@ const About = () => {
               <div className="about-card-body">
                 <h3 className="about-role">Full-Stack Web Developer</h3>
                 <p className="about-bio">
-                  I have great experience in web design and development.
-                  I work a minimum of 7–8 hours a day. I love my work.
-                  It's my profession &amp; I learn new things every day.
-                  I absolutely try to understand what my clients want for their website
-                  and always help them from beginning to end.
+                  I am a Full Stack Developer with 4+ years of experience in designing and developing scalable,
+                  secure and high-performance web applications. I specialize in React.js, Next.js, TypeScript
+                  &amp; Node.js with a strong focus on building clean architectures and efficient APIs.
+                  I enjoy solving complex problems and delivering reliable, production-ready solutions.
                 </p>
 
                 <div className="about-info-grid">
@@ -83,11 +82,11 @@ const About = () => {
                   <div className="info-item info-item-full">
                     <HomeIcon style={{ fontSize: 16, color: 'var(--text-muted)' }} />
                     <span className="info-label">Location</span>
-                    <span className="info-value">Kot Abdul Malik, Lahore, Pakistan</span>
+                    <span className="info-value">Lahore, Pakistan</span>
                   </div>
                 </div>
 
-                <a href="/MyCv.pdf" download="MyCv.pdf" className="btn-primary-custom" style={{ marginTop: 24 }}>
+                <a href="/Muhammad Muneeb.pdf" download="Muhammad Muneeb.pdf" className="btn-primary-custom" style={{ marginTop: 24 }}>
                   <DownloadOutlined /> Download Resume
                 </a>
               </div>

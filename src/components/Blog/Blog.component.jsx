@@ -31,7 +31,7 @@ const Blog = () => {
                 </div>
                 <h4 className="blog-title">My Official Blog Site</h4>
                 <p className="blog-desc">
-                  I'll be posting articles on web development, React, Django,
+                  I'll be posting articles on web development, React, Next.js, Node.js, Django,
                   and modern JavaScript. Stay tuned — great content is coming!
                 </p>
                 <div className="blog-footer">

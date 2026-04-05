@@ -8,27 +8,46 @@ const skillGroups = [
     label: 'frontend',
     color: '#58a6ff',
     skills: [
-      { name: 'HTML5',      level: 90, tag: 'markup' },
-      { name: 'CSS3',       level: 90, tag: 'styling' },
-      { name: 'JavaScript', level: 75, tag: 'language' },
-      { name: 'ReactJs',    level: 82, tag: 'framework' },
-      { name: 'Redux',      level: 80, tag: 'state' },
-      { name: 'TypeScript', level: 70, tag: 'language' },
+      { name: 'HTML5', level: 90, tag: 'markup' },
+      { name: 'CSS3', level: 90, tag: 'styling' },
+      { name: 'JavaScript', level: 90, tag: 'language' },
+      { name: 'ReactJs', level: 90, tag: 'library' },
+      { name: 'NextJs', level: 85, tag: 'framework' },
+      { name: 'Redux ', level: 85, tag: 'state' },
+      { name: 'TypeScript', level: 80, tag: 'language' },
     ],
   },
   {
     label: 'backend',
     color: '#3fb950',
     skills: [
-      { name: 'Python',       level: 75, tag: 'language' },
-      { name: 'Django',       level: 72, tag: 'framework' },
-      { name: 'RESTful APIs', level: 75, tag: 'api' },
-      { name: 'MySQL',        level: 70, tag: 'database' },
+      { name: 'NodeJs', level: 90, tag: 'runtime' },
+      { name: 'ExpressJs', level: 90, tag: 'framework' },
+      { name: 'Python', level: 90, tag: 'language' },
+      { name: 'Django', level: 90, tag: 'framework' },
+      { name: 'RESTful APIs', level: 90, tag: 'api' },
+      { name: 'GraphQL', level: 70, tag: 'api' },
+      { name: 'MongoDB', level: 80, tag: 'database' },
+      { name: 'MySQL', level: 70, tag: 'database' },
     ],
   },
+  {
+    label: 'tools & practices',
+    color: '#f778ba',
+    skills: [
+      { name: 'Git', level: 85, tag: 'tool' },
+      { name: 'Agile', level: 85, tag: 'process' },
+      { name: 'Jira', level: 85, tag: 'tool' },
+      { name: 'ClickUp', level: 80, tag: 'tool' },
+      { name: 'Bitrix24', level: 75, tag: 'tool' },
+      { name: 'Performance Optimization', level: 80, tag: 'performance' },
+      { name: 'API Integration', level: 90, tag: 'integration' },
+      { name: 'Authentication', level: 85, tag: 'security' },
+    ],
+  }
 ]
 
-const techTags = ['React', 'Next.js', 'TypeScript', 'Django', 'Python', 'Git', 'REST APIs', 'MySQL', 'Redux', 'CSS3']
+const techTags = ['React', 'Next.js', 'Node.js', 'TypeScript', 'Django', 'Python', 'Git', 'REST APIs', 'MySQL', 'Redux', 'CSS3']
 
 // Each bar manages its own width state so the transition is guaranteed
 const SkillBar = ({ name, level, color, tag }) => {
