@@ -1,28 +1,65 @@
+'use client'
 import './Projects.styles.css'
-import ArrayProject from './Array.Project';
-import Cards from './Card';
+import ArrayProject from './Array.Project'
 import Aos from 'aos'
-import 'aos/dist/aos.css'
 import { useEffect } from 'react'
-const Projects=()=>{
-    useEffect(()=>{
-        Aos.init({duration:2000})
-       },[])
-    return(<>
-    <h1 className='projects'>My Projects</h1>
-    <div className='container'>
-    <div className='row'>
-    {ArrayProject.map(({title,description,pic_url,github},index)=>{
-    
-    return(
-        <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xsm-6 projects_card" data-aos="flip-right">
-   <Cards title={title} description={description} pic_url={pic_url} github={github} key={index} />
+import GitHubIcon from '@mui/icons-material/GitHub'
+import OpenInNewIcon from '@mui/icons-material/OpenInNew'
+
+const ProjectCard = ({ title, description, pic_url, github, index }) => (
+  <div
+    className="proj-card"
+    data-aos="fade-up"
+    data-aos-delay={index * 80}
+  >
+    <div className="proj-img-wrap">
+      <img src={pic_url} alt={title} className="proj-img" />
+      <div className="proj-img-overlay">
+        {github && (
+          <a href={github} target="_blank" rel="noreferrer" className="proj-overlay-btn">
+            <OpenInNewIcon style={{ fontSize: 18 }} /> View Project
+          </a>
+        )}
+      </div>
+    </div>
+    <div className="proj-body">
+      <div className="proj-index">
+        <span className="tok-comment">{'// '}</span>
+        <span style={{ color: 'var(--orange)' }}>project_{String(index + 1).padStart(2, '0')}</span>
+      </div>
+      <h4 className="proj-title">{title}</h4>
+      <p className="proj-desc">{description}</p>
+      <div className="proj-footer">
+        {github && (
+          <a href={github} target="_blank" rel="noreferrer" className="proj-link">
+            <GitHubIcon style={{ fontSize: 16 }} /> GitHub
+          </a>
+        )}
+      </div>
+    </div>
   </div>
+)
+
+const Projects = () => {
+  useEffect(() => { Aos.init({ duration: 900, once: true }) }, [])
+
+  return (
+    <section className="projects-section">
+      <div className="container">
+        <span className="section-tag">portfolio</span>
+        <h2 className="section-title">Featured <span>Projects</span></h2>
+        <div className="section-divider"></div>
+
+        <div className="row gy-4 gx-4">
+          {ArrayProject.map((proj, i) => (
+            <div className="col-xl-4 col-lg-4 col-md-6" key={i}>
+              <ProjectCard {...proj} index={i} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   )
-   })}
-  </div>
-  </div>
-    </>)
 }
 
 export default Projects

@@ -1,39 +1,82 @@
+'use client'
 import './Education.styles.css'
 import Aos from 'aos'
-import 'aos/dist/aos.css'
 import { useEffect } from 'react'
-const Education =()=>{
-    useEffect(()=>{
-        Aos.init({duration:2000})
-       },[])
-    return(<>
-    <div className='container education'>
-<div className='row'>
-<h1 className='education'>Course & Education</h1>
+import SchoolIcon from '@mui/icons-material/School'
+import CodeIcon from '@mui/icons-material/Code'
 
+const education = [
+  {
+    type: 'degree',
+    icon: <SchoolIcon />,
+    degree: 'BS (Information Technology)',
+    institute: 'University of Punjab',
+    period: '2017 — 2021',
+    detail: 'Specialized in web technologies, databases, and software engineering.',
+  },
+]
 
-<div className='col-xl-4 col-lg-4 offset-lg-2 offset-md-4 offset-sm-2' data-aos="flip-up">
-<h2 className='education'>Education</h2>
-<h5 className='education'>BS(Information Technology)</h5>
-<p className='education'>University Of Punjab(2017-21)</p>
-</div>
+const courses = [
+  { name: 'JavaScript Course',         provider: 'Udemy (Newbie)',                  year: '2021' },
+  { name: 'ReactJs Course',            provider: 'Zero To Mastery Academy (Udemy)', year: '2021' },
+  { name: 'Advance ReactJs Course',    provider: 'Mysterious Academy (Google)',     year: '2022' },
+]
 
+const Education = () => {
+  useEffect(() => { Aos.init({ duration: 900, once: true }) }, [])
 
-<div className='col-xl-4 col-lg-4 offset-lg-2 offset-md-4 offset-sm-2' data-aos="flip-down">
-<h2 className='education'>Courses</h2>
-<h5 className='education'>JavaScript Course</h5>
-<p className='education'>Newbie(Udemy)</p>
-<h5 className='education'>ReactJs Course</h5>
-<p className='education'>Zero To Mastery Accademy(udemy)</p>
-<h5 className='education'>Advance ReactJs Course</h5>
-<p className='education'>Mysterious Accademy(Google)</p>
+  return (
+    <section className="edu-section">
+      <div className="container">
+        <span className="section-tag">background</span>
+        <h2 className="section-title">Education &amp; <span>Courses</span></h2>
+        <div className="section-divider"></div>
 
+        <div className="row gy-5">
+          {/* Education */}
+          <div className="col-lg-5" data-aos="fade-right">
+            <div className="edu-block-label">
+              <SchoolIcon style={{ fontSize: 16 }} /> Education
+            </div>
+            {education.map((e, i) => (
+              <div className="edu-card" key={i}>
+                <div className="edu-card-icon"><SchoolIcon /></div>
+                <div className="edu-card-info">
+                  <h4 className="edu-degree">{e.degree}</h4>
+                  <p className="edu-institute">{e.institute}</p>
+                  <span className="edu-period">{e.period}</span>
+                  <p className="edu-detail">{e.detail}</p>
+                </div>
+              </div>
+            ))}
+          </div>
 
-</div>
-</div>
-    </div>
-    
-    </>)
+          {/* Courses */}
+          <div className="col-lg-7" data-aos="fade-left">
+            <div className="edu-block-label">
+              <CodeIcon style={{ fontSize: 16 }} /> Courses &amp; Certifications
+            </div>
+            <div className="course-timeline">
+              {courses.map((c, i) => (
+                <div className="course-item" key={i} style={{ animationDelay: `${i * 0.1}s` }}>
+                  <div className="course-dot"></div>
+                  <div className="course-content">
+                    <div className="course-header">
+                      <h5 className="course-name">{c.name}</h5>
+                      <span className="course-year">{c.year}</span>
+                    </div>
+                    <p className="course-provider">
+                      <span className="tok-str">"{c.provider}"</span>
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
 }
 
 export default Education
