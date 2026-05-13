@@ -1,6 +1,6 @@
 'use client'
 import './About.styles.css'
-import mypicture from '../../assets/MyPicture.jpeg'
+import mypicture from '../../assets/MyPicture.PNG'
 import Aos from 'aos'
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';

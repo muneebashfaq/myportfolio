@@ -12,6 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" style={{ backgroundColor: '#080d18' }}>
       <head>
+        <link rel="icon" href="/favicon.png" type="image/png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
