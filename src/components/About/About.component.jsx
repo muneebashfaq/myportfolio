@@ -1,6 +1,6 @@
 'use client'
 import './About.styles.css'
-import mypicture from '../../assets/MyPicture.PNG'
+import mypicture from '../../assets/MyPicture.png'
 import Aos from 'aos'
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -10,6 +10,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import { DownloadOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
 import { useEffect } from 'react'
+
 
 const About = () => {
   useEffect(() => { Aos.init({ duration: 900, once: true }) }, [])
